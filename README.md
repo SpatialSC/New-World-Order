@@ -1,2 +1,2 @@
-# mARket
+# Market
 Augmented Reality Storefront
