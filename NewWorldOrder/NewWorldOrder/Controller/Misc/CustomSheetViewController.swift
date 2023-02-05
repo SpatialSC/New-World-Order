@@ -14,6 +14,7 @@ import UIKit
 protocol childDismissDelegate {
     func handleChildWillDismiss()
     func handleChildDidDismiss()
+    func addToCartButtonPressed()
 }
 
 extension Constants {

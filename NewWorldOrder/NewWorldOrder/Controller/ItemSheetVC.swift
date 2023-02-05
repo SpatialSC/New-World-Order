@@ -61,12 +61,8 @@ class ItemSheetVC: CustomSheetViewController {
 
     //MARK: - User Interaction
 
-    @IBAction func selectButtonDidPressed(_ sender: UIButton) {
-        
-    }
-
-    @IBAction func reselectButtonDidPressed(_ sender: UIButton) {
-        
+    @IBAction func addToCartButtonPressed(_ sender: UIButton) {
+        sheetDismissDelegate?.addToCartButtonPressed()
     }
     
     //MARK: - Public Interface

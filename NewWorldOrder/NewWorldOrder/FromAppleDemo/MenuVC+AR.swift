@@ -33,6 +33,7 @@ extension MenuVC {
             focusSquare.hide()
         } else {
             focusSquare.unhide()
+//            AlertManager.displayError
 //            statusViewController.scheduleMessage("TRY MOVING LEFT OR RIGHT", inSeconds: 5.0, messageType: .focusSquare)
         }
         

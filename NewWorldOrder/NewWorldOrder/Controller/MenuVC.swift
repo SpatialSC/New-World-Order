@@ -307,7 +307,9 @@ extension MenuVC: UITableViewDelegate {
         presentItemSheetVC(currentlyVisibleItem!)
         toggleFullBackgroundShadow(hidden: true)
         
-        let object = VirtualObject.availableObjects.first(where: { $0.modelName == "cup" })!
+//        let object = VirtualObject.availableObjects.first(where: { $0.modelName == "cup" })!
+        let object = VirtualObject.availableObjects[Int.random(in: 0..<5)]
+                
         virtualObjectLoader.loadVirtualObject(object, loadedHandler: { [unowned self] loadedObject in
             
             do {
@@ -374,6 +376,10 @@ extension MenuVC: UISheetPresentationControllerDelegate, childDismissDelegate {
         currentlyVisibleItem = nil
         toggleScrollButtons(hidden: true)
         toggleFullBackgroundShadow(hidden: false)
+    }
+    
+    func addToCartButtonPressed() {
+        CartService.shared.addItemToCart(currentlyVisibleItem!)
     }
     
 }

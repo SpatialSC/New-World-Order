@@ -310,7 +310,6 @@
 				AC1DB79C298EF90A000B670F /* AppDelegate.swift */,
 				4729AA85298F29C2003C52E0 /* SceneDelegate.swift */,
 				AC1DB79E298EF90A000B670F /* MenuVC.swift */,
-				4729AAC1298F7875003C52E0 /* MenuVC+AR.swift */,
 				4729AA9A298F488A003C52E0 /* MoreVC.swift */,
 				4729AA93298F3257003C52E0 /* ItemSheetVC.swift */,
 				4729AA98298F479E003C52E0 /* CheckoutVC.swift */,
@@ -633,6 +632,7 @@
 		4729AAA0298F7808003C52E0 /* FromAppleDemo */ = {
 			isa = PBXGroup;
 			children = (
+				4729AAC1298F7875003C52E0 /* MenuVC+AR.swift */,
 				4729AAB8298F7838003C52E0 /* ThresholdPanGesture.swift */,
 				4729AAB9298F7838003C52E0 /* ViewController+Actions.swift */,
 				4729AAB6298F7838003C52E0 /* ViewController+ARSCNViewDelegate.swift */,

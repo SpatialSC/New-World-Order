@@ -18,6 +18,10 @@ struct Cart: Codable {
         return totalPrice
     }
     
+    var totalPriceString: String {
+        return "$\(totalPrice)"
+    }
+    
     var tax: Double {
         return totalPrice * 0.2
     }
