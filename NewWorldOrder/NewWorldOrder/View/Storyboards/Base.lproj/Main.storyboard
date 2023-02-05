@@ -89,19 +89,30 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dulcelogo" translatesAutoresizingMaskIntoConstraints="NO" id="BlP-gc-Nba">
                                         <rect key="frame" x="44" y="0.0" width="296" height="60"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="02u-cs-Fzs">
-                                        <rect key="frame" x="340" y="8" width="44" height="44"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="eE4-6r-P4A"/>
-                                            <constraint firstAttribute="width" secondItem="02u-cs-Fzs" secondAttribute="height" id="jsh-wz-gnM"/>
-                                        </constraints>
-                                        <color key="tintColor" name="customWhite"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="cart.fill" catalog="system"/>
-                                        <connections>
-                                            <action selector="checkoutButtonPressed" destination="EQ4-Di-Psw" eventType="touchUpInside" id="d0B-Kb-XBP"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="-12" translatesAutoresizingMaskIntoConstraints="NO" id="E9X-PX-6FE">
+                                        <rect key="frame" x="340" y="4" width="44" height="52.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Nl-yx-Cci">
+                                                <rect key="frame" x="0.0" y="0.0" width="44" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <color key="textColor" name="customWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="02u-cs-Fzs">
+                                                <rect key="frame" x="0.0" y="8.5" width="44" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="eE4-6r-P4A"/>
+                                                    <constraint firstAttribute="width" secondItem="02u-cs-Fzs" secondAttribute="height" id="jsh-wz-gnM"/>
+                                                </constraints>
+                                                <color key="tintColor" name="customWhite"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="cart.fill" catalog="system"/>
+                                                <connections>
+                                                    <action selector="checkoutButtonPressed" destination="EQ4-Di-Psw" eventType="touchUpInside" id="d0B-Kb-XBP"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="aCw-zJ-bzK"/>
@@ -136,6 +147,7 @@
                     <connections>
                         <outlet property="headerBgView" destination="dfR-qg-v9V" id="q8y-JQ-8zr"/>
                         <outlet property="headerCartButton" destination="02u-cs-Fzs" id="nUe-6W-3e5"/>
+                        <outlet property="headerCartCountLabel" destination="8Nl-yx-Cci" id="cFk-SD-3o6"/>
                         <outlet property="headerImageView" destination="BlP-gc-Nba" id="kBg-1l-UZn"/>
                         <outlet property="headerMoreButton" destination="eRT-Sk-RzW" id="Zja-JQ-BXW"/>
                         <outlet property="headerView" destination="JwR-t0-UNu" id="pLz-0y-iJx"/>
@@ -165,7 +177,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dulce Matcha" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aqU-bh-KCc">
-                                                <rect key="frame" x="0.0" y="0.0" width="160" height="40"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="MtK-Dg-CL2"/>
                                                 </constraints>
@@ -174,7 +186,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7IK-Ys-8iY">
-                                                <rect key="frame" x="160" y="0.0" width="174" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HaZ-x0-sG6">

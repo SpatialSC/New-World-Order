@@ -12,7 +12,7 @@ class CartService: NSObject {
     static var shared = CartService()
     private let LOCAL_FILE_APPENDING_PATH = "cart.json"
     private var localFileLocation: URL!
-    private var cart: Cart!
+    private var cart: Cart = Cart(items: [])
     
     //MARK: - Initializer
     

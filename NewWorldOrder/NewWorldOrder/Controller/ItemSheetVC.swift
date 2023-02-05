@@ -63,6 +63,9 @@ class ItemSheetVC: CustomSheetViewController {
 
     @IBAction func addToCartButtonPressed(_ sender: UIButton) {
         sheetDismissDelegate?.addToCartButtonPressed()
+        cartButton.setImage(UIImage(systemName: "cart.fill"), for: .normal)
+        cartButton.imageView?.tintColor = .green
+        cartButton.isEnabled = false
     }
     
     //MARK: - Public Interface
@@ -71,7 +74,7 @@ class ItemSheetVC: CustomSheetViewController {
         self.menuItem = menuItem
         titleLabel.text = menuItem.title
         priceLabel.text = "$\(menuItem.price)"
-        descriptionLabel.text = "GOOD SHIT"
+        descriptionLabel.text = menuItem.ingredients
     }
 
 

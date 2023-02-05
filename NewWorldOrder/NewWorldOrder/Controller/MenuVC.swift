@@ -65,6 +65,7 @@ class MenuVC: UIViewController {
     @IBOutlet var headerImageView: UIImageView!
     @IBOutlet var headerMoreButton: UIButton!
     @IBOutlet var headerCartButton: UIButton!
+    @IBOutlet var headerCartCountLabel: UILabel!
     @IBOutlet var scrollLeftButton: UIButton!
     @IBOutlet var scrollRightButton: UIButton!
     
@@ -138,6 +139,7 @@ class MenuVC: UIViewController {
         applyGradientLayers()
         toggleFullBackgroundShadow(hidden: false)
         
+        headerCartCountLabel.isHidden = true
         scrollLeftButton.alpha = 0
         scrollLeftButton.applyMediumShadow()
         scrollRightButton.alpha = 0
@@ -194,6 +196,9 @@ class MenuVC: UIViewController {
         toggleTableView(hidden: true)
         toggleHeader(hidden: true)
         let checkoutVc = CheckoutVC.create(onDismiss: {
+            if CartService.shared.getCartQuantity() == 0 {
+                self.virtualObjectLoader.removeAllVirtualObjects()
+            }
             self.toggleTableView(hidden: false)
             self.toggleHeader(hidden: false)
         })
@@ -223,6 +228,9 @@ class MenuVC: UIViewController {
                 } else {
                     self.currentlyVisibleItem = AllMenuItems[categoryIndex].1[itemIndex-1]
                 }
+                let object = VirtualObject.availableObjects[Int.random(in: 0..<5)]
+                virtualObjectLoader.removeVirtualObject(at: CartService.shared.getCartQuantity())
+                loadObject(object: object)
                 return
             }
         }
@@ -242,6 +250,9 @@ class MenuVC: UIViewController {
                 } else {
                     self.currentlyVisibleItem = AllMenuItems[categoryIndex].1[itemIndex+1]
                 }
+                let object = VirtualObject.availableObjects[Int.random(in: 0..<5)]
+                virtualObjectLoader.removeVirtualObject(at: CartService.shared.getCartQuantity())
+                loadObject(object: object)
                 return
             }
         }
@@ -295,6 +306,22 @@ class MenuVC: UIViewController {
         fullBackgroundGradientLayer.isHidden = hidden
     }
     
+    func loadObject(object: VirtualObject) {
+        virtualObjectLoader.loadVirtualObject(object, loadedHandler: { [unowned self] loadedObject in
+            do {
+                let scene = try SCNScene(url: object.referenceURL, options: nil)
+                self.sceneView.prepare([scene], completionHandler: { _ in
+                    DispatchQueue.main.async {
+                        self.hideObjectLoadingUI()
+                        self.placeVirtualObject(loadedObject)
+                    }
+                })
+            } catch {
+                fatalError("Failed to load SCNScene from object.referenceURL")
+            }
+        })
+    }
+    
 }
 
 //MARK: - UITableViewDelegate
@@ -309,23 +336,9 @@ extension MenuVC: UITableViewDelegate {
         
 //        let object = VirtualObject.availableObjects.first(where: { $0.modelName == "cup" })!
         let object = VirtualObject.availableObjects[Int.random(in: 0..<5)]
-                
-        virtualObjectLoader.loadVirtualObject(object, loadedHandler: { [unowned self] loadedObject in
-            
-            do {
-                let scene = try SCNScene(url: object.referenceURL, options: nil)
-                self.sceneView.prepare([scene], completionHandler: { _ in
-                    DispatchQueue.main.async {
-                        self.hideObjectLoadingUI()
-                        self.placeVirtualObject(loadedObject)
-                    }
-                })
-            } catch {
-                fatalError("Failed to load SCNScene from object.referenceURL")
-            }
-            
-        })
-        displayObjectLoadingUI()
+        
+        virtualObjectLoader.removeVirtualObject(at: CartService.shared.getCartQuantity())
+        loadObject(object: object)
         
         return nil
     }
@@ -380,6 +393,8 @@ extension MenuVC: UISheetPresentationControllerDelegate, childDismissDelegate {
     
     func addToCartButtonPressed() {
         CartService.shared.addItemToCart(currentlyVisibleItem!)
+        headerCartCountLabel.isHidden = false
+        headerCartCountLabel.text = "\(CartService.shared.getCartQuantity())"
     }
     
 }

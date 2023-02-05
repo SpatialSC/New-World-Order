@@ -19,10 +19,14 @@ struct Cart: Codable {
     }
     
     var totalPriceString: String {
-        return "$\(totalPrice)"
+        return "$\(totalPrice)\(totalPrice % 10 == 0 ? "0" : "")"
     }
     
     var tax: Double {
         return totalPrice * 0.2
     }
+}
+
+func %<N: BinaryFloatingPoint>(lhs: N, rhs: N) -> N {
+    lhs.truncatingRemainder(dividingBy: rhs)
 }
