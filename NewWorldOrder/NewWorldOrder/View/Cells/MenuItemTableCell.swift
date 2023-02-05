@@ -25,6 +25,7 @@ class MenuItemTableCell: UITableViewCell {
         itemTitleLabel.text = title
         itemPriceLabel.text = "$\(price)"
         itemImageView.image = image
+        itemImageView.roundCornersViaCornerRadius(radius: 15)
     }
     
 }
