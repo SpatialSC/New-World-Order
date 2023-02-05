@@ -46,7 +46,7 @@ class ItemSheetVC: CustomSheetViewController {
 //        selectButton.layer.cornerRadius = 5
 //        reselectButton.layer.cornerRadius = 5
         containingView.layer.cornerRadius = 15
-        view.backgroundColor = .customBlack.withAlphaComponent(0.5)
+        view.backgroundColor = .customBlack.withAlphaComponent(0.7)
 
         isModalInPresentation = true //prevents the VC from being dismissed by the user
 

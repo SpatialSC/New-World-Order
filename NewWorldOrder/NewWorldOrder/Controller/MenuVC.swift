@@ -9,6 +9,7 @@ import UIKit
 import RealityKit
 import ARKit
 import SceneKit
+import QuartzCore
 
 class MenuVC: UIViewController {
     
@@ -56,16 +57,24 @@ class MenuVC: UIViewController {
         return sceneView.session
     }
     
-    
-    
-
+    @IBOutlet var maskView: UIView!
     @IBOutlet var tableView: UITableView!
     @IBOutlet var headerView: UIStackView!
+    @IBOutlet var headerBgView: UIView!
     @IBOutlet var headerImageView: UIImageView!
     @IBOutlet var headerMoreButton: UIButton!
     @IBOutlet var headerCartButton: UIButton!
     @IBOutlet var scrollLeftButton: UIButton!
     @IBOutlet var scrollRightButton: UIButton!
+    
+    lazy var fullBackgroundGradientLayer: CAGradientLayer = {
+        let gradientLayer:CAGradientLayer = CAGradientLayer()
+        gradientLayer.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height)
+        gradientLayer.colors = [UIColor.black.cgColor, UIColor.black.cgColor]
+        gradientLayer.opacity = 0.53
+        sceneView.layer.addSublayer(gradientLayer)
+        return gradientLayer
+    }()
     
     //MARK: - Lifecycle
     
@@ -115,7 +124,7 @@ class MenuVC: UIViewController {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.showsVerticalScrollIndicator = true
         tableView.separatorStyle = .none
-        tableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 120))
+        tableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 90))
 
         tableView.register(UINib(nibName: Constants.SBID.Cell.MenuItemTableCell, bundle: nil), forCellReuseIdentifier: Constants.SBID.Cell.MenuItemTableCell)
     }
@@ -125,9 +134,8 @@ class MenuVC: UIViewController {
         headerMoreButton.applyMediumShadow()
         headerCartButton.applyMediumShadow()
         
-        applyGradientUnderneathNavbar()
-//        toggleFullBackgroundShadow(hidden: false)
-//        setupBlurredStatusBar()
+        applyGradientLayers()
+        toggleFullBackgroundShadow(hidden: false)
         
         scrollLeftButton.alpha = 0
         scrollLeftButton.applyMediumShadow()
@@ -155,38 +163,22 @@ class MenuVC: UIViewController {
         tapGesture.delegate = self
         sceneView.addGestureRecognizer(tapGesture)
     }
-    
-    func toggleFullBackgroundShadow(hidden: Bool) {
-        let gradientLayer:CAGradientLayer = CAGradientLayer()
-        gradientLayer.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height)
-        gradientLayer.colors = [UIColor.black.cgColor, UIColor.black.cgColor]
-        gradientLayer.opacity = 0.53
-        sceneView.layer.addSublayer(gradientLayer)
-    }
-    
-    //TODO: couldn't figure this out
-    
-//    func setupBlurredStatusBar() {
-//        tableView.isHidden = true
-//
-//        let mask = CAGradientLayer()
-//        mask.startPoint = CGPointMake(0.5, 0)
-//        mask.endPoint = CGPointMake(0.5, 1)
-//        let whiteColor = UIColor.white
-//        mask.colors = [whiteColor.withAlphaComponent(0.1).cgColor,whiteColor.withAlphaComponent(1.0),whiteColor.withAlphaComponent(1.0).cgColor]
-//        mask.locations = [NSNumber(value: 0.0),NSNumber(value: 0.2),NSNumber(value: 1.0)]
-//        mask.frame = view.bounds
-//        view.layer.mask = mask
-    
-    func applyGradientUnderneathNavbar() {
-//        tableView.isHidden = true
         
-        let gradientLayer:CAGradientLayer = CAGradientLayer()
-        gradientLayer.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height / 2)
-        gradientLayer.colors = [UIColor.black.cgColor,UIColor.clear.cgColor]
-        gradientLayer.opacity = 1
-        sceneView.layer.addSublayer(gradientLayer)
+    func applyGradientLayers() {
+        let gradientLayerFromTop:CAGradientLayer = CAGradientLayer()
+        gradientLayerFromTop.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height / 2)
+        gradientLayerFromTop.colors = [UIColor.black.cgColor,UIColor.clear.cgColor]
+        gradientLayerFromTop.opacity = 0.5
+        sceneView.layer.addSublayer(gradientLayerFromTop)
         
+        let transparentGradientLayer = CAGradientLayer()
+        transparentGradientLayer.startPoint = CGPoint(x: 0.5, y: 0)
+        transparentGradientLayer.endPoint = CGPoint(x: 0.5, y: 1)
+        transparentGradientLayer.colors = [UIColor.clear.cgColor, UIColor.white.cgColor, UIColor.white.cgColor]
+        transparentGradientLayer.locations = [0, 0.1, 1]
+        transparentGradientLayer.frame = CGRect(x: 0, y: tableView.bounds.minY, width: view.bounds.width, height: view.bounds.height)
+        maskView.layer.mask = transparentGradientLayer
+
         let gradientLayerFromBottom:CAGradientLayer = CAGradientLayer()
         gradientLayerFromBottom.frame = CGRect(x: 0, y: view.frame.size.height - (view.frame.size.height/2), width: view.frame.size.width, height: view.frame.size.height / 2)
         gradientLayerFromBottom.colors = [UIColor.clear.cgColor,UIColor.black.cgColor]
@@ -298,6 +290,10 @@ class MenuVC: UIViewController {
         }
     }
     
+    func toggleFullBackgroundShadow(hidden: Bool) {
+        fullBackgroundGradientLayer.isHidden = hidden
+    }
+    
 }
 
 //MARK: - UITableViewDelegate
@@ -308,6 +304,7 @@ extension MenuVC: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: false)
         currentlyVisibleItem = AllMenuItems[indexPath.section].1[indexPath.row]
         presentItemSheetVC(currentlyVisibleItem!)
+        toggleFullBackgroundShadow(hidden: true)
         return nil
     }
     
@@ -343,6 +340,7 @@ extension MenuVC: UISheetPresentationControllerDelegate, childDismissDelegate {
         case "zil":
             dismissItemSheetVC()
             toggleScrollButtons(hidden: true)
+            toggleFullBackgroundShadow(hidden: false)
         default:
             break
         }
@@ -355,6 +353,7 @@ extension MenuVC: UISheetPresentationControllerDelegate, childDismissDelegate {
     func handleChildDidDismiss() {
         currentlyVisibleItem = nil
         toggleScrollButtons(hidden: true)
+        toggleFullBackgroundShadow(hidden: false)
     }
     
 }
@@ -372,7 +371,7 @@ extension MenuVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let menuItemCell = self.tableView.dequeueReusableCell(withIdentifier: Constants.SBID.Cell.MenuItemTableCell, for: indexPath) as! MenuItemTableCell
         let menuItem = AllMenuItems[indexPath.section].1[indexPath.row]
-        menuItemCell.configure(title: menuItem.title, price: menuItem.price, image: menuItem.image)
+        menuItemCell.configure(title: menuItem.title, price: menuItem.price, image: UIImage(named: menuItem.image)!)
         return menuItemCell
     }
     
