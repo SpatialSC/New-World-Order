@@ -19,7 +19,7 @@ protocol childDismissDelegate {
 extension Constants {
     struct Detents {
         static let zil: UISheetPresentationController.Detent = ._detent(withIdentifier: "zil", constant: -50)
-        static let s: UISheetPresentationController.Detent = ._detent(withIdentifier: "s", constant: 300)
+        static let s: UISheetPresentationController.Detent = ._detent(withIdentifier: "s", constant: 200)
         static let l: UISheetPresentationController.Detent = ._detent(withIdentifier: "l", constant: 650)
         static let xl: UISheetPresentationController.Detent = ._detent(withIdentifier: "xl", constant: 900)
     }
