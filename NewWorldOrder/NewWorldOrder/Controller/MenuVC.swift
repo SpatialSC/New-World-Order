@@ -8,6 +8,7 @@
 import UIKit
 import RealityKit
 import ARKit
+import SceneKit
 
 class MenuVC: UIViewController {
     
@@ -23,9 +24,42 @@ class MenuVC: UIViewController {
         }
     }
     
-    @IBOutlet var arView: ARView!
-    @IBOutlet var tableView: UITableView!
+//    @IBOutlet var arView: ARView!
+    @IBOutlet var sceneView: VirtualObjectARView!
+    let coachingOverlay = ARCoachingOverlayView()
+    var focusSquare = FocusSquare()
     
+    /// The view controller that displays the status and "restart experience" UI.
+//    lazy var statusViewController: StatusViewController = {
+//        return children.lazy.compactMap({ $0 as? StatusViewController }).first!
+//    }()
+    
+    /// The view controller that displays the virtual object selection menu.
+    var objectsViewController: VirtualObjectSelectionViewController?
+    
+    // MARK: - ARKit Configuration Properties
+    
+    /// A type which manages gesture manipulation of virtual content in the scene.
+    lazy var virtualObjectInteraction = VirtualObjectInteraction(sceneView: sceneView, viewController: self)
+    
+    /// Coordinates the loading and unloading of reference nodes for virtual objects.
+    let virtualObjectLoader = VirtualObjectLoader()
+    
+    /// Marks if the AR experience is available for restart.
+    var isRestartAvailable = true
+    
+    /// A serial queue used to coordinate adding or removing nodes from the scene.
+    let updateQueue = DispatchQueue(label: "com.example.apple-samplecode.arkitexample.serialSceneKitQueue")
+    
+    /// Convenience accessor for the session owned by ARSCNView.
+    var session: ARSession {
+        return sceneView.session
+    }
+    
+    
+    
+
+    @IBOutlet var tableView: UITableView!
     @IBOutlet var headerView: UIStackView!
     @IBOutlet var headerImageView: UIImageView!
     @IBOutlet var headerMoreButton: UIButton!
@@ -39,15 +73,35 @@ class MenuVC: UIViewController {
         super.viewDidLoad()
         
         // Load the "Box" scene from the "Experience" Reality File
-        let boxAnchor = try! Experience.loadBox()
+//        let boxAnchor = try! Experience.loadBox()
         
         // Add the box anchor to the scene
-        arView.scene.anchors.append(boxAnchor)
+//        arView.scene.anchors.append(boxAnchor)
 //        arView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapArView)))
 
         setupHeader()
-        setupArCamera()
+        setupAr()
         setupTableView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // Prevent the screen from being dimmed to avoid interuppting the AR experience.
+        UIApplication.shared.isIdleTimerDisabled = true
+
+        // Start the `ARSession`.
+        resetTracking()
+    }
+    
+    override var prefersHomeIndicatorAutoHidden: Bool {
+        return true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        session.pause()
     }
     
     //MARK: - Setup
@@ -70,29 +124,74 @@ class MenuVC: UIViewController {
         headerImageView.applyMediumShadow()
         headerMoreButton.applyMediumShadow()
         headerCartButton.applyMediumShadow()
-    }
-    
-    func setupArCamera() {
+        
         applyGradientUnderneathNavbar()
+//        toggleFullBackgroundShadow(hidden: false)
+//        setupBlurredStatusBar()
+        
         scrollLeftButton.alpha = 0
         scrollLeftButton.applyMediumShadow()
         scrollRightButton.alpha = 0
         scrollRightButton.applyMediumShadow()
     }
     
+    func setupAr() {
+        sceneView.delegate = self
+        sceneView.session.delegate = self
+        
+        // Set up coaching overlay.
+        setupCoachingOverlay()
+
+        // Set up scene content.
+        sceneView.scene.rootNode.addChildNode(focusSquare)
+
+        // Hook up status view controller callback(s).
+//        statusViewController.restartExperienceHandler = { [unowned self] in
+//            self.restartExperience()
+//        }
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(showVirtualObjectSelectionViewController))
+        // Set the delegate to ensure this gesture is only used when there are no virtual objects in the scene.
+        tapGesture.delegate = self
+        sceneView.addGestureRecognizer(tapGesture)
+    }
+    
+    func toggleFullBackgroundShadow(hidden: Bool) {
+        let gradientLayer:CAGradientLayer = CAGradientLayer()
+        gradientLayer.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height)
+        gradientLayer.colors = [UIColor.black.cgColor, UIColor.black.cgColor]
+        gradientLayer.opacity = 0.53
+        sceneView.layer.addSublayer(gradientLayer)
+    }
+    
+    //TODO: couldn't figure this out
+    
+//    func setupBlurredStatusBar() {
+//        tableView.isHidden = true
+//
+//        let mask = CAGradientLayer()
+//        mask.startPoint = CGPointMake(0.5, 0)
+//        mask.endPoint = CGPointMake(0.5, 1)
+//        let whiteColor = UIColor.white
+//        mask.colors = [whiteColor.withAlphaComponent(0.1).cgColor,whiteColor.withAlphaComponent(1.0),whiteColor.withAlphaComponent(1.0).cgColor]
+//        mask.locations = [NSNumber(value: 0.0),NSNumber(value: 0.2),NSNumber(value: 1.0)]
+//        mask.frame = view.bounds
+//        view.layer.mask = mask
     
     func applyGradientUnderneathNavbar() {
+//        tableView.isHidden = true
+        
         let gradientLayer:CAGradientLayer = CAGradientLayer()
         gradientLayer.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height / 2)
         gradientLayer.colors = [UIColor.black.cgColor,UIColor.clear.cgColor]
-        gradientLayer.opacity = 0.5
-        arView.layer.addSublayer(gradientLayer)
+        gradientLayer.opacity = 1
+        sceneView.layer.addSublayer(gradientLayer)
         
         let gradientLayerFromBottom:CAGradientLayer = CAGradientLayer()
         gradientLayerFromBottom.frame = CGRect(x: 0, y: view.frame.size.height - (view.frame.size.height/2), width: view.frame.size.width, height: view.frame.size.height / 2)
         gradientLayerFromBottom.colors = [UIColor.clear.cgColor,UIColor.black.cgColor]
         gradientLayerFromBottom.opacity = 0.5
-        arView.layer.addSublayer(gradientLayerFromBottom)
+        sceneView.layer.addSublayer(gradientLayerFromBottom)
     }
     
     //MARK: - User Interaction

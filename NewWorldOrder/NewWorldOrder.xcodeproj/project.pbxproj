@@ -112,6 +112,22 @@
 		4729AA94298F3257003C52E0 /* ItemSheetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4729AA93298F3257003C52E0 /* ItemSheetVC.swift */; };
 		4729AA99298F479E003C52E0 /* CheckoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4729AA98298F479E003C52E0 /* CheckoutVC.swift */; };
 		4729AA9B298F488A003C52E0 /* MoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4729AA9A298F488A003C52E0 /* MoreVC.swift */; };
+		4729AA9F298F77F4003C52E0 /* Models.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 4729AA9E298F77F4003C52E0 /* Models.scnassets */; };
+		4729AAAC298F7814003C52E0 /* FocusSquareSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4729AAA2298F7814003C52E0 /* FocusSquareSegment.swift */; };
+		4729AAAD298F7814003C52E0 /* FocusSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4729AAA3298F7814003C52E0 /* FocusSquare.swift */; };
+		4729AAAE298F7814003C52E0 /* VirtualObjectLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4729AAA5298F7814003C52E0 /* VirtualObjectLoader.swift */; };
+		4729AAAF298F7814003C52E0 /* VirtualObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4729AAA6298F7814003C52E0 /* VirtualObject.swift */; };
+		4729AAB0298F7814003C52E0 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4729AAA8298F7814003C52E0 /* Utilities.swift */; };
+		4729AAB1298F7814003C52E0 /* VirtualObjectSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4729AAAA298F7814003C52E0 /* VirtualObjectSelection.swift */; };
+		4729AAB2298F7814003C52E0 /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4729AAAB298F7814003C52E0 /* StatusViewController.swift */; };
+		4729AABA298F7838003C52E0 /* ViewController+ObjectSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4729AAB3298F7837003C52E0 /* ViewController+ObjectSelection.swift */; };
+		4729AABB298F7838003C52E0 /* VirtualObjectInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4729AAB4298F7837003C52E0 /* VirtualObjectInteraction.swift */; };
+		4729AABC298F7838003C52E0 /* ViewController+CoachingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4729AAB5298F7837003C52E0 /* ViewController+CoachingOverlay.swift */; };
+		4729AABD298F7838003C52E0 /* ViewController+ARSCNViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4729AAB6298F7838003C52E0 /* ViewController+ARSCNViewDelegate.swift */; };
+		4729AABE298F7838003C52E0 /* VirtualObjectARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4729AAB7298F7838003C52E0 /* VirtualObjectARView.swift */; };
+		4729AABF298F7838003C52E0 /* ThresholdPanGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4729AAB8298F7838003C52E0 /* ThresholdPanGesture.swift */; };
+		4729AAC0298F7838003C52E0 /* ViewController+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4729AAB9298F7838003C52E0 /* ViewController+Actions.swift */; };
+		4729AAC2298F7875003C52E0 /* MenuVC+AR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4729AAC1298F7875003C52E0 /* MenuVC+AR.swift */; };
 		AC1DB79D298EF90A000B670F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1DB79C298EF90A000B670F /* AppDelegate.swift */; };
 		AC1DB79F298EF90A000B670F /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1DB79E298EF90A000B670F /* MenuVC.swift */; };
 		AC1DB7A1298EF90A000B670F /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = AC1DB7A0298EF90A000B670F /* Experience.rcproject */; };
@@ -227,6 +243,23 @@
 		4729AA97298F32A1003C52E0 /* UISheetPresentationControllerDetent+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISheetPresentationControllerDetent+Private.h"; sourceTree = "<group>"; };
 		4729AA98298F479E003C52E0 /* CheckoutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutVC.swift; sourceTree = "<group>"; };
 		4729AA9A298F488A003C52E0 /* MoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreVC.swift; sourceTree = "<group>"; };
+		4729AA9C298F77A5003C52E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		4729AA9E298F77F4003C52E0 /* Models.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Models.scnassets; sourceTree = "<group>"; };
+		4729AAA2298F7814003C52E0 /* FocusSquareSegment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusSquareSegment.swift; sourceTree = "<group>"; };
+		4729AAA3298F7814003C52E0 /* FocusSquare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusSquare.swift; sourceTree = "<group>"; };
+		4729AAA5298F7814003C52E0 /* VirtualObjectLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirtualObjectLoader.swift; sourceTree = "<group>"; };
+		4729AAA6298F7814003C52E0 /* VirtualObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirtualObject.swift; sourceTree = "<group>"; };
+		4729AAA8298F7814003C52E0 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		4729AAAA298F7814003C52E0 /* VirtualObjectSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirtualObjectSelection.swift; sourceTree = "<group>"; };
+		4729AAAB298F7814003C52E0 /* StatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
+		4729AAB3298F7837003C52E0 /* ViewController+ObjectSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+ObjectSelection.swift"; sourceTree = "<group>"; };
+		4729AAB4298F7837003C52E0 /* VirtualObjectInteraction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirtualObjectInteraction.swift; sourceTree = "<group>"; };
+		4729AAB5298F7837003C52E0 /* ViewController+CoachingOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+CoachingOverlay.swift"; sourceTree = "<group>"; };
+		4729AAB6298F7838003C52E0 /* ViewController+ARSCNViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+ARSCNViewDelegate.swift"; sourceTree = "<group>"; };
+		4729AAB7298F7838003C52E0 /* VirtualObjectARView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirtualObjectARView.swift; sourceTree = "<group>"; };
+		4729AAB8298F7838003C52E0 /* ThresholdPanGesture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThresholdPanGesture.swift; sourceTree = "<group>"; };
+		4729AAB9298F7838003C52E0 /* ViewController+Actions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+Actions.swift"; sourceTree = "<group>"; };
+		4729AAC1298F7875003C52E0 /* MenuVC+AR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MenuVC+AR.swift"; sourceTree = "<group>"; };
 		AC1DB799298EF90A000B670F /* NewWorldOrder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewWorldOrder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC1DB79C298EF90A000B670F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC1DB79E298EF90A000B670F /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
@@ -272,6 +305,7 @@
 				AC1DB79C298EF90A000B670F /* AppDelegate.swift */,
 				4729AA85298F29C2003C52E0 /* SceneDelegate.swift */,
 				AC1DB79E298EF90A000B670F /* MenuVC.swift */,
+				4729AAC1298F7875003C52E0 /* MenuVC+AR.swift */,
 				4729AA9A298F488A003C52E0 /* MoreVC.swift */,
 				4729AA93298F3257003C52E0 /* ItemSheetVC.swift */,
 				4729AA98298F479E003C52E0 /* CheckoutVC.swift */,
@@ -579,6 +613,71 @@
 			path = "Objective-C";
 			sourceTree = "<group>";
 		};
+		4729AA9D298F77D9003C52E0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4729AA9E298F77F4003C52E0 /* Models.scnassets */,
+				4729A9AA298EFE90003C52E0 /* pie.usdz */,
+				4729A9AB298EFE90003C52E0 /* pot.usdz */,
+				AC1DB7A0298EF90A000B670F /* Experience.rcproject */,
+				AC1DB7A5298EF90C000B670F /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		4729AAA0298F7808003C52E0 /* FromAppleDemo */ = {
+			isa = PBXGroup;
+			children = (
+				4729AAB8298F7838003C52E0 /* ThresholdPanGesture.swift */,
+				4729AAB9298F7838003C52E0 /* ViewController+Actions.swift */,
+				4729AAB6298F7838003C52E0 /* ViewController+ARSCNViewDelegate.swift */,
+				4729AAB5298F7837003C52E0 /* ViewController+CoachingOverlay.swift */,
+				4729AAB3298F7837003C52E0 /* ViewController+ObjectSelection.swift */,
+				4729AAB7298F7838003C52E0 /* VirtualObjectARView.swift */,
+				4729AAB4298F7837003C52E0 /* VirtualObjectInteraction.swift */,
+				4729AAA9298F7814003C52E0 /* Additional View Controllers */,
+				4729AAA1298F7814003C52E0 /* Focus Square */,
+				4729AAA7298F7814003C52E0 /* Utilities */,
+				4729AAA4298F7814003C52E0 /* Virtual Objects */,
+			);
+			path = FromAppleDemo;
+			sourceTree = "<group>";
+		};
+		4729AAA1298F7814003C52E0 /* Focus Square */ = {
+			isa = PBXGroup;
+			children = (
+				4729AAA2298F7814003C52E0 /* FocusSquareSegment.swift */,
+				4729AAA3298F7814003C52E0 /* FocusSquare.swift */,
+			);
+			path = "Focus Square";
+			sourceTree = "<group>";
+		};
+		4729AAA4298F7814003C52E0 /* Virtual Objects */ = {
+			isa = PBXGroup;
+			children = (
+				4729AAA5298F7814003C52E0 /* VirtualObjectLoader.swift */,
+				4729AAA6298F7814003C52E0 /* VirtualObject.swift */,
+			);
+			path = "Virtual Objects";
+			sourceTree = "<group>";
+		};
+		4729AAA7298F7814003C52E0 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				4729AAA8298F7814003C52E0 /* Utilities.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		4729AAA9298F7814003C52E0 /* Additional View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4729AAAA298F7814003C52E0 /* VirtualObjectSelection.swift */,
+				4729AAAB298F7814003C52E0 /* StatusViewController.swift */,
+			);
+			path = "Additional View Controllers";
+			sourceTree = "<group>";
+		};
 		AC1DB790298EF90A000B670F = {
 			isa = PBXGroup;
 			children = (
@@ -598,13 +697,12 @@
 		AC1DB79B298EF90A000B670F /* NewWorldOrder */ = {
 			isa = PBXGroup;
 			children = (
+				4729AAA0298F7808003C52E0 /* FromAppleDemo */,
+				4729AA9D298F77D9003C52E0 /* Resources */,
+				4729AA9C298F77A5003C52E0 /* Info.plist */,
 				4729A9AE298F2866003C52E0 /* Model */,
 				4729A9AF298F286A003C52E0 /* View */,
 				4729A9B0298F286E003C52E0 /* Controller */,
-				4729A9AA298EFE90003C52E0 /* pie.usdz */,
-				4729A9AB298EFE90003C52E0 /* pot.usdz */,
-				AC1DB7A0298EF90A000B670F /* Experience.rcproject */,
-				AC1DB7A5298EF90C000B670F /* Assets.xcassets */,
 				4729AA1B298F28FF003C52E0 /* AdditionalFiles */,
 				4729AA95298F32A1003C52E0 /* Objective-C */,
 				4729AA17298F28FF003C52E0 /* Constants */,
@@ -685,6 +783,7 @@
 				4729A9AC298EFE90003C52E0 /* pie.usdz in Resources */,
 				AC1DB7A4298EF90A000B670F /* Main.storyboard in Resources */,
 				4729A9AD298EFE90003C52E0 /* pot.usdz in Resources */,
+				4729AA9F298F77F4003C52E0 /* Models.scnassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -727,6 +826,7 @@
 				4729AA58298F28FF003C52E0 /* UIAlertController+AddImage.swift in Sources */,
 				4729AA37298F28FF003C52E0 /* String+Pattern.swift in Sources */,
 				4729AA32298F28FF003C52E0 /* Dict+RemoveNullEntries.swift in Sources */,
+				4729AAAF298F7814003C52E0 /* VirtualObject.swift in Sources */,
 				4729AA92298F3243003C52E0 /* CustomSheetViewController.swift in Sources */,
 				4729AA56298F28FF003C52E0 /* UINavigationItem+UIButton.swift in Sources */,
 				AC1DB7A1298EF90A000B670F /* Experience.rcproject in Sources */,
@@ -735,16 +835,23 @@
 				4729AA3A298F28FF003C52E0 /* String+Indexing.swift in Sources */,
 				4729AA55298F28FF003C52E0 /* UINavigationController+SwipeBack.swift in Sources */,
 				4729AA35298F28FF003C52E0 /* String+Random.swift in Sources */,
+				4729AAC2298F7875003C52E0 /* MenuVC+AR.swift in Sources */,
+				4729AAAC298F7814003C52E0 /* FocusSquareSegment.swift in Sources */,
 				4729AA57298F28FF003C52E0 /* InsetLabel.swift in Sources */,
 				4729AA31298F28FF003C52E0 /* Color+Hex.swift in Sources */,
 				4729AA78298F28FF003C52E0 /* ImagePicker.swift in Sources */,
 				4729AA51298F28FF003C52E0 /* UIView+AddBorders.swift in Sources */,
+				4729AABB298F7838003C52E0 /* VirtualObjectInteraction.swift in Sources */,
 				4729AA7C298F28FF003C52E0 /* NotificationsManager.swift in Sources */,
+				4729AABE298F7838003C52E0 /* VirtualObjectARView.swift in Sources */,
 				4729AA34298F28FF003C52E0 /* StringChat+Emoji.swift in Sources */,
 				4729AA60298F28FF003C52E0 /* UIViewController+Child.swift in Sources */,
 				4729AA4E298F28FF003C52E0 /* UIView+TopBorder.swift in Sources */,
 				4729AA49298F28FF003C52E0 /* UIView+Animations.swift in Sources */,
 				4729AA40298F28FF003C52E0 /* UIImage+WithSize.swift in Sources */,
+				4729AAAD298F7814003C52E0 /* FocusSquare.swift in Sources */,
+				4729AAAE298F7814003C52E0 /* VirtualObjectLoader.swift in Sources */,
+				4729AABA298F7838003C52E0 /* ViewController+ObjectSelection.swift in Sources */,
 				4729AA4C298F28FF003C52E0 /* UIView+RoundedIndividualCorners.swift in Sources */,
 				4729AA6C298F28FF003C52E0 /* UITableView+DeselectAll.swift in Sources */,
 				4729AA36298F28FF003C52E0 /* String+Ranges.swift in Sources */,
@@ -752,9 +859,11 @@
 				4729AA82298F28FF003C52E0 /* Version.swift in Sources */,
 				4729A9B5298F28E0003C52E0 /* DeviceService.swift in Sources */,
 				4729AA43298F28FF003C52E0 /* UIScrollView+IsAt.swift in Sources */,
+				4729AABD298F7838003C52E0 /* ViewController+ARSCNViewDelegate.swift in Sources */,
 				4729A9B6298F28E0003C52E0 /* Device.swift in Sources */,
 				4729AA5C298F28FF003C52E0 /* UITextView+PreventPeriod.swift in Sources */,
 				4729AA99298F479E003C52E0 /* CheckoutVC.swift in Sources */,
+				4729AABF298F7838003C52E0 /* ThresholdPanGesture.swift in Sources */,
 				4729AA76298F28FF003C52E0 /* UIColor+Custom.swift in Sources */,
 				4729AA48298F28FF003C52E0 /* UIView+BecomeRound.swift in Sources */,
 				4729A9BA298F28F0003C52E0 /* UpdateAvailableVC.swift in Sources */,
@@ -766,6 +875,7 @@
 				4729AA4F298F28FF003C52E0 /* UIView+LoadFromNib.swift in Sources */,
 				4729AA7E298F28FF003C52E0 /* ContactsManager.swift in Sources */,
 				4729AA83298F28FF003C52E0 /* CustomAttributedString.swift in Sources */,
+				4729AAB1298F7814003C52E0 /* VirtualObjectSelection.swift in Sources */,
 				4729AA6E298F28FF003C52E0 /* UITableView+AnimateReload.swift in Sources */,
 				4729AA44298F28FF003C52E0 /* UIButton+LoadingIndicator.swift in Sources */,
 				4729AA6F298F28FF003C52E0 /* PanGesture+Direction.swift in Sources */,
@@ -775,10 +885,13 @@
 				4729AA42298F28FF003C52E0 /* UIScrollView+ToTop.swift in Sources */,
 				4729AA46298F28FF003C52E0 /* UIBarButtonItem+Image.swift in Sources */,
 				4729AA84298F28FF003C52E0 /* Numbers.swift in Sources */,
+				4729AABC298F7838003C52E0 /* ViewController+CoachingOverlay.swift in Sources */,
+				4729AAB2298F7814003C52E0 /* StatusViewController.swift in Sources */,
 				4729AA6D298F28FF003C52E0 /* UITableView+SectionShadow.swift in Sources */,
 				4729AA75298F28FF003C52E0 /* Constants.swift in Sources */,
 				4729AA53298F28FF003C52E0 /* UIPageViewController+GoTo.swift in Sources */,
 				4729AA5E298F28FF003C52E0 /* UIImageView+Inspectable.swift in Sources */,
+				4729AAC0298F7838003C52E0 /* ViewController+Actions.swift in Sources */,
 				4729AA2C298F28FF003C52E0 /* MKPlacemark+Address.swift in Sources */,
 				4729AA6A298F28FF003C52E0 /* UIViewController+Loading.swift in Sources */,
 				4729AA5A298F28FF003C52E0 /* UITextView+MaxLength.swift in Sources */,
@@ -787,6 +900,7 @@
 				4729AA7F298F28FF003C52E0 /* Distance.swift in Sources */,
 				4729AA86298F29C2003C52E0 /* SceneDelegate.swift in Sources */,
 				4729AA5D298F28FF003C52E0 /* UIImageView+ProfilePic.swift in Sources */,
+				4729AAB0298F7814003C52E0 /* Utilities.swift in Sources */,
 				4729AA7D298F28FF003C52E0 /* PermissionsManager.swift in Sources */,
 				4729AA90298F2DBF003C52E0 /* MenuItem.swift in Sources */,
 				4729AA3C298F28FF003C52E0 /* UIImage+Compress.swift in Sources */,
@@ -947,9 +1061,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5JEM6D7V78;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NewWorldOrder/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = NewWorldOrder;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
-				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "The camera is used for augmenting reality.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -984,9 +1099,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5JEM6D7V78;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NewWorldOrder/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = NewWorldOrder;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
-				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "The camera is used for augmenting reality.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

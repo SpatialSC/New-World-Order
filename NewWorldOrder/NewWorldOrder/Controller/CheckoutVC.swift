@@ -25,7 +25,7 @@ class CheckoutVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .customBlack.withAlphaComponent(0.7)
+        view.backgroundColor = .customBlack.withAlphaComponent(0.9)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
