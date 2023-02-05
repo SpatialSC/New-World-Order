@@ -73,7 +73,7 @@ class ItemSheetVC: CustomSheetViewController {
     func rerender(with menuItem: MenuItem) {
         self.menuItem = menuItem
         cartButton.isEnabled = true
-        cartButton.setImage(UIImage(systemName: "cart"), for: .normal)
+        cartButton.setImage(UIImage(systemName: "cart.badge.plus"), for: .normal)
         cartButton.imageView?.tintColor = .customWhite
         titleLabel.text = menuItem.title
         priceLabel.text = "$\(menuItem.price)"

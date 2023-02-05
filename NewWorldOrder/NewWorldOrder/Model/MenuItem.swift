@@ -12,6 +12,9 @@ struct MenuItem: Equatable, Codable {
     let price: Double
     let image: String
     let ingredients: String
+    var priceString: String {
+        return "$\(price)\(price % 10 == 0 ? "0" : "")"
+    }
 }
 
 let AllMenuItems: [(String, [MenuItem])] = [
