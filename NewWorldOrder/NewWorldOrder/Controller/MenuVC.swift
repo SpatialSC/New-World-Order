@@ -11,8 +11,14 @@ import ARKit
 
 class MenuVC: UIViewController {
     
+    //MARK: - Properties
+    
+    //UI
+    var itemSheetVC: ItemSheetVC?
     @IBOutlet var arView: ARView!
     @IBOutlet var tableView: UITableView!
+    
+    //MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,45 +40,74 @@ class MenuVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = .clear
+        tableView.delaysContentTouches = false //responsive button highlight
+        tableView.estimatedRowHeight = 100
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.showsVerticalScrollIndicator = false
+        tableView.separatorStyle = .none
+        tableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+
+        tableView.register(UINib(nibName: Constants.SBID.Cell.MenuItemTableCell, bundle: nil), forCellReuseIdentifier: Constants.SBID.Cell.MenuItemTableCell)
     }
     
-//    @objc func didTapArView(_ arView: ARView) {
-//        print("tapped", arView)
-//    }
-//
-//    func setupUsdzArView() {
-//
-////        arView = ARView(frame: .zero)
-////        let model = try! ModelEntity.load(named: "pie")
-//        let model = try! Entity.loadModel(named: "pie.usdz")
-//        model.orientation = simd_quatf(angle: -.pi/2, axis: [1,0,0])
-//        print("model:", model)
-//
-//
-////        arView.session.run(ARWorldTrackingConfiguration())
-//
-//        let anchor = AnchorEntity()
-////        anchor.position.y += 0.25
-//        anchor.addChild(model)
-////        arView.scene.addAnchor(anchor)
-//        arView.scene.anchors.append(anchor)
-//
-//    }
+    //MARK: - Helpers
+    
+    func presentItemSheetVC(_ item: MenuItem) {
+        itemSheetVC = ItemSheetVC.create(item: item, sheetDelegate: self)
+        guard let itemSheetVC else { return }
+        present(itemSheetVC, animated: true)
+        UIView.animate(withDuration: 0.2, delay: 0, options: .curveLinear) {
+            self.tableView.alpha = 0
+        }
+    }
+    
+    func dismissItemSheetVC() {
+        itemSheetVC!.dismiss(animated: false)
+        UIView.animate(withDuration: 0.2, delay: 0, options: .curveLinear) {
+            self.tableView.alpha = 1
+        }
+    }
     
 }
 
+//MARK: - UITableViewDelegate
+
 extension MenuVC: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        tableView.deselectRow(at: indexPath, animated: false)
+        let item = AllMenuItems[0]
+        presentItemSheetVC(item)
+        return nil
+    }
+
+}
+
+//MARK: - SheetDelegate
+
+extension MenuVC: UISheetPresentationControllerDelegate {
+    
+    func sheetPresentationControllerDidChangeSelectedDetentIdentifier(_ sheetPresentationController: UISheetPresentationController) {
+        let sheetID = sheetPresentationController.selectedDetentIdentifier?.rawValue
+
+        if sheetID == "zil" {
+            dismissItemSheetVC()
+        }
+    }
     
 }
 
 extension MenuVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return AllMenuItems.count + 20
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let menuItemCell = self.tableView.dequeueReusableCell(withIdentifier: Constants.SBID.Cell.MenuItemTableCell, for: indexPath) as! MenuItemTableCell
+        let menuItem = AllMenuItems[0]
+        menuItemCell.configure(title: menuItem.title, price: menuItem.price, image: menuItem.image)
+        return menuItemCell
     }
     
     

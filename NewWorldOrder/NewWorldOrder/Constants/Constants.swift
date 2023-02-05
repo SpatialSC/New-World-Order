@@ -25,7 +25,7 @@ enum Constants {
     static let defaultMailLink = URL(string: "mailto://")!
     static let gmailLink = URL(string: "googlegmail://")!
     static let appStoreLink = URL(string: "https://apps.apple.com/app/apple-store/id1668940768")!
-    static let companyLink = URL(string: "https://leaveylabs.xyz")!
+    static let companyLink = URL(string: "https://newworldorder.com")!
     static let contactEmailLink = URL(string: "mailto:leaveylabs@gmail.com")!
 
     // Note: all nib names should be the same ss their storyboard ID
@@ -35,24 +35,18 @@ enum Constants {
         }
         struct SB {
             static let Main = "Main"
-            static let Misc = "Misc"
             static let Launch = "Launch"
         }
         struct Cell {
-            static let ChatTableCell = "ChatTableCell"
-            static let ChatAddTableCell = "ChatAddTableCell"
-            static let ChatPinTableCell = "ChatPinTableCell"
+            static let MenuItemTableCell = "MenuItemTableCell"
         }
         struct VC {
             //Home
-            static let Chats = "ChatsVC"
-            
-            //Misc
-            static let PageDemo = "PageDemoVC"
-            static let ScreenDemo = "ScreenDemoVC"
+            static let MenuVC = "MenuVC"
+            static let ItemSheetVC = "ItemSheetVC"
         }
         struct Segue {
-            static let ToExplain = "ToExplain"
+            
         }
     }
     

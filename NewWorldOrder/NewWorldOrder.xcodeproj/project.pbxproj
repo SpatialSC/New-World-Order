@@ -105,6 +105,11 @@
 		4729AA84298F28FF003C52E0 /* Numbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4729AA2A298F28FF003C52E0 /* Numbers.swift */; };
 		4729AA86298F29C2003C52E0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4729AA85298F29C2003C52E0 /* SceneDelegate.swift */; };
 		4729AA89298F2A12003C52E0 /* SwiftMessages in Frameworks */ = {isa = PBXBuildFile; productRef = 4729AA88298F2A12003C52E0 /* SwiftMessages */; };
+		4729AA8D298F2AD1003C52E0 /* MenuItemTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4729AA8B298F2AD1003C52E0 /* MenuItemTableCell.swift */; };
+		4729AA8E298F2AD1003C52E0 /* MenuItemTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4729AA8C298F2AD1003C52E0 /* MenuItemTableCell.xib */; };
+		4729AA90298F2DBF003C52E0 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4729AA8F298F2DBF003C52E0 /* MenuItem.swift */; };
+		4729AA92298F3243003C52E0 /* CustomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4729AA91298F3243003C52E0 /* CustomSheetViewController.swift */; };
+		4729AA94298F3257003C52E0 /* ItemSheetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4729AA93298F3257003C52E0 /* ItemSheetVC.swift */; };
 		AC1DB79D298EF90A000B670F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1DB79C298EF90A000B670F /* AppDelegate.swift */; };
 		AC1DB79F298EF90A000B670F /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1DB79E298EF90A000B670F /* MenuVC.swift */; };
 		AC1DB7A1298EF90A000B670F /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = AC1DB7A0298EF90A000B670F /* Experience.rcproject */; };
@@ -211,6 +216,13 @@
 		4729AA29298F28FF003C52E0 /* CustomAttributedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAttributedString.swift; sourceTree = "<group>"; };
 		4729AA2A298F28FF003C52E0 /* Numbers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Numbers.swift; sourceTree = "<group>"; };
 		4729AA85298F29C2003C52E0 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		4729AA8B298F2AD1003C52E0 /* MenuItemTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemTableCell.swift; sourceTree = "<group>"; };
+		4729AA8C298F2AD1003C52E0 /* MenuItemTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuItemTableCell.xib; sourceTree = "<group>"; };
+		4729AA8F298F2DBF003C52E0 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
+		4729AA91298F3243003C52E0 /* CustomSheetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSheetViewController.swift; sourceTree = "<group>"; };
+		4729AA93298F3257003C52E0 /* ItemSheetVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemSheetVC.swift; sourceTree = "<group>"; };
+		4729AA96298F32A1003C52E0 /* mist-ios-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "mist-ios-Bridging-Header.h"; sourceTree = "<group>"; };
+		4729AA97298F32A1003C52E0 /* UISheetPresentationControllerDetent+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISheetPresentationControllerDetent+Private.h"; sourceTree = "<group>"; };
 		AC1DB799298EF90A000B670F /* NewWorldOrder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewWorldOrder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC1DB79C298EF90A000B670F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC1DB79E298EF90A000B670F /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
@@ -236,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				4729A9B2298F28E0003C52E0 /* Device */,
+				4729AA8F298F2DBF003C52E0 /* MenuItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -243,6 +256,7 @@
 		4729A9AF298F286A003C52E0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4729AA8A298F2AB9003C52E0 /* Cells */,
 				4729A9B1298F28AB003C52E0 /* Storyboards */,
 			);
 			path = View;
@@ -254,6 +268,7 @@
 				AC1DB79C298EF90A000B670F /* AppDelegate.swift */,
 				4729AA85298F29C2003C52E0 /* SceneDelegate.swift */,
 				AC1DB79E298EF90A000B670F /* MenuVC.swift */,
+				4729AA93298F3257003C52E0 /* ItemSheetVC.swift */,
 				4729A9B7298F28F0003C52E0 /* Misc */,
 			);
 			path = Controller;
@@ -280,6 +295,7 @@
 		4729A9B7298F28F0003C52E0 /* Misc */ = {
 			isa = PBXGroup;
 			children = (
+				4729AA91298F3243003C52E0 /* CustomSheetViewController.swift */,
 				4729A9B8298F28F0003C52E0 /* UpdateAvailableVC.swift */,
 				4729A9B9298F28F0003C52E0 /* SheetVC.swift */,
 			);
@@ -539,6 +555,24 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		4729AA8A298F2AB9003C52E0 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4729AA8B298F2AD1003C52E0 /* MenuItemTableCell.swift */,
+				4729AA8C298F2AD1003C52E0 /* MenuItemTableCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		4729AA95298F32A1003C52E0 /* Objective-C */ = {
+			isa = PBXGroup;
+			children = (
+				4729AA96298F32A1003C52E0 /* mist-ios-Bridging-Header.h */,
+				4729AA97298F32A1003C52E0 /* UISheetPresentationControllerDetent+Private.h */,
+			);
+			path = "Objective-C";
+			sourceTree = "<group>";
+		};
 		AC1DB790298EF90A000B670F = {
 			isa = PBXGroup;
 			children = (
@@ -566,6 +600,7 @@
 				AC1DB7A0298EF90A000B670F /* Experience.rcproject */,
 				AC1DB7A5298EF90C000B670F /* Assets.xcassets */,
 				4729AA1B298F28FF003C52E0 /* AdditionalFiles */,
+				4729AA95298F32A1003C52E0 /* Objective-C */,
 				4729AA17298F28FF003C52E0 /* Constants */,
 				4729A9BC298F28FF003C52E0 /* Extensions */,
 				4729AA1E298F28FF003C52E0 /* Managers */,
@@ -638,6 +673,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4729AA8E298F2AD1003C52E0 /* MenuItemTableCell.xib in Resources */,
 				AC1DB7A9298EF90C000B670F /* LaunchScreen.storyboard in Resources */,
 				AC1DB7A6298EF90C000B670F /* Assets.xcassets in Resources */,
 				4729A9AC298EFE90003C52E0 /* pie.usdz in Resources */,
@@ -671,6 +707,7 @@
 				4729AA4D298F28FF003C52E0 /* UIView+ParentVC.swift in Sources */,
 				4729AA73298F28FF003C52E0 /* UITextField+Padding.swift in Sources */,
 				4729AA54298F28FF003C52E0 /* UINavigationController+Completion.swift in Sources */,
+				4729AA8D298F2AD1003C52E0 /* MenuItemTableCell.swift in Sources */,
 				4729AA5F298F28FF003C52E0 /* UIImageView+Initials.swift in Sources */,
 				4729AA2D298F28FF003C52E0 /* CLLocationCoordinate+Heading.swift in Sources */,
 				4729AA39298F28FF003C52E0 /* String+Condensed.swift in Sources */,
@@ -683,6 +720,7 @@
 				4729AA58298F28FF003C52E0 /* UIAlertController+AddImage.swift in Sources */,
 				4729AA37298F28FF003C52E0 /* String+Pattern.swift in Sources */,
 				4729AA32298F28FF003C52E0 /* Dict+RemoveNullEntries.swift in Sources */,
+				4729AA92298F3243003C52E0 /* CustomSheetViewController.swift in Sources */,
 				4729AA56298F28FF003C52E0 /* UINavigationItem+UIButton.swift in Sources */,
 				AC1DB7A1298EF90A000B670F /* Experience.rcproject in Sources */,
 				4729AA69298F28FF003C52E0 /* UIViewController+OpenMailApp.swift in Sources */,
@@ -716,6 +754,7 @@
 				4729AA52298F28FF003C52E0 /* UIColor+Hex.swift in Sources */,
 				4729AA72298F28FF003C52E0 /* UITextField+MaxLength.swift in Sources */,
 				4729AA3F298F28FF003C52E0 /* UIImage+Blur.swift in Sources */,
+				4729AA94298F3257003C52E0 /* ItemSheetVC.swift in Sources */,
 				4729AA4F298F28FF003C52E0 /* UIView+LoadFromNib.swift in Sources */,
 				4729AA7E298F28FF003C52E0 /* ContactsManager.swift in Sources */,
 				4729AA83298F28FF003C52E0 /* CustomAttributedString.swift in Sources */,
@@ -741,6 +780,7 @@
 				4729AA86298F29C2003C52E0 /* SceneDelegate.swift in Sources */,
 				4729AA5D298F28FF003C52E0 /* UIImageView+ProfilePic.swift in Sources */,
 				4729AA7D298F28FF003C52E0 /* PermissionsManager.swift in Sources */,
+				4729AA90298F2DBF003C52E0 /* MenuItem.swift in Sources */,
 				4729AA3C298F28FF003C52E0 /* UIImage+Compress.swift in Sources */,
 				4729AA74298F28FF003C52E0 /* Encodable+Dict.swift in Sources */,
 				4729AA5B298F28FF003C52E0 /* UITextView+Placeholder.swift in Sources */,
@@ -826,7 +866,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -880,7 +920,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -909,7 +949,7 @@
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -921,6 +961,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "./NewWorldOrder/Objective-C/mist-ios-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -945,7 +986,7 @@
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -957,6 +998,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "./NewWorldOrder/Objective-C/mist-ios-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
