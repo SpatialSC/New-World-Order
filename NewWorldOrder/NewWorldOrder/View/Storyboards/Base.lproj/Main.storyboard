@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EQ4-Di-Psw">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--MenuVC-->
+        <scene sceneID="o0D-Hg-lbh">
+            <objects>
+                <viewController storyboardIdentifier="MenuVC" id="EQ4-Di-Psw" customClass="MenuVC" customModule="NewWorldOrder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4dq-Dh-4Qe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mO3-aZ-Lzg">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </arView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="uO1-fH-neJ">
+                                <rect key="frame" x="0.0" y="48" width="414" height="814"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="zQc-FI-uVE"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zQc-FI-uVE" firstAttribute="trailing" secondItem="mO3-aZ-Lzg" secondAttribute="trailing" id="9Q7-Zh-DKg"/>
+                            <constraint firstItem="zQc-FI-uVE" firstAttribute="bottom" secondItem="uO1-fH-neJ" secondAttribute="bottom" id="Lf0-CR-VlY"/>
+                            <constraint firstItem="uO1-fH-neJ" firstAttribute="leading" secondItem="zQc-FI-uVE" secondAttribute="leading" id="OxX-bI-rSx"/>
+                            <constraint firstItem="mO3-aZ-Lzg" firstAttribute="top" secondItem="4dq-Dh-4Qe" secondAttribute="top" id="PKL-br-ors"/>
+                            <constraint firstAttribute="bottom" secondItem="mO3-aZ-Lzg" secondAttribute="bottom" id="RHW-BO-5rM"/>
+                            <constraint firstItem="uO1-fH-neJ" firstAttribute="top" secondItem="zQc-FI-uVE" secondAttribute="top" id="bio-kp-6nc"/>
+                            <constraint firstItem="zQc-FI-uVE" firstAttribute="trailing" secondItem="uO1-fH-neJ" secondAttribute="trailing" id="dq2-mT-YDx"/>
+                            <constraint firstItem="mO3-aZ-Lzg" firstAttribute="leading" secondItem="zQc-FI-uVE" secondAttribute="leading" id="noj-6l-95n"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="arView" destination="mO3-aZ-Lzg" id="CTt-bp-X1x"/>
+                        <outlet property="tableView" destination="uO1-fH-neJ" id="j6C-oz-q8h"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CKH-uj-DVn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="522" y="134"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
