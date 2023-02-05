@@ -290,9 +290,13 @@ class MenuVC: UIViewController {
         }
     }
     
+<<<<<<< Updated upstream
     func toggleFullBackgroundShadow(hidden: Bool) {
         fullBackgroundGradientLayer.isHidden = hidden
     }
+=======
+    
+>>>>>>> Stashed changes
     
 }
 
@@ -304,7 +308,32 @@ extension MenuVC: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: false)
         currentlyVisibleItem = AllMenuItems[indexPath.section].1[indexPath.row]
         presentItemSheetVC(currentlyVisibleItem!)
+<<<<<<< Updated upstream
         toggleFullBackgroundShadow(hidden: true)
+=======
+        
+        //TRY AR EXPERIENCE
+        let asdf = VirtualObject.availableObjects
+        var object = VirtualObject.availableObjects.first!
+        
+        virtualObjectLoader.loadVirtualObject(object, loadedHandler: { [unowned self] loadedObject in
+            
+            do {
+                let scene = try SCNScene(url: object.referenceURL, options: nil)
+                self.sceneView.prepare([scene], completionHandler: { _ in
+                    DispatchQueue.main.async {
+                        self.hideObjectLoadingUI()
+                        self.placeVirtualObject(loadedObject)
+                    }
+                })
+            } catch {
+                fatalError("Failed to load SCNScene from object.referenceURL")
+            }
+            
+        })
+        displayObjectLoadingUI()
+        
+>>>>>>> Stashed changes
         return nil
     }
     
@@ -357,6 +386,7 @@ extension MenuVC: UISheetPresentationControllerDelegate, childDismissDelegate {
     }
     
 }
+
 
 extension MenuVC: UITableViewDataSource {
     

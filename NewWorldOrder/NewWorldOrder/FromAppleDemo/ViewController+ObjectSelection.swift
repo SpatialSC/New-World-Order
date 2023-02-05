@@ -16,7 +16,7 @@ extension MenuVC: VirtualObjectSelectionViewControllerDelegate {
      - Tag: PlaceVirtualObject */
     func placeVirtualObject(_ virtualObject: VirtualObject) {
         guard focusSquare.state != .initializing, let query = virtualObject.raycastQuery else {
-//            self.statusViewController.showMessage("CANNOT PLACE OBJECT\nTry moving left or right.")
+            AlertManager.displayError("Cannot place object", "Try moving left or right")
             if let controller = self.objectsViewController {
                 self.virtualObjectSelectionViewController(controller, didDeselectObject: virtualObject)
             }

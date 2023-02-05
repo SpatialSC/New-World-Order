@@ -128,8 +128,13 @@
 		4729AABF298F7838003C52E0 /* ThresholdPanGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4729AAB8298F7838003C52E0 /* ThresholdPanGesture.swift */; };
 		4729AAC0298F7838003C52E0 /* ViewController+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4729AAB9298F7838003C52E0 /* ViewController+Actions.swift */; };
 		4729AAC2298F7875003C52E0 /* MenuVC+AR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4729AAC1298F7875003C52E0 /* MenuVC+AR.swift */; };
+<<<<<<< Updated upstream
 		4729AAC4298F7D0A003C52E0 /* CartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4729AAC3298F7D0A003C52E0 /* CartService.swift */; };
 		4729AAC6298F7D0F003C52E0 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4729AAC5298F7D0F003C52E0 /* Cart.swift */; };
+=======
+		AC0CF8FD298F854700ADE21A /* falafel.usdz in Resources */ = {isa = PBXBuildFile; fileRef = AC0CF8FC298F854700ADE21A /* falafel.usdz */; };
+		AC0CF8FF298F858A00ADE21A /* falafel.scn in Resources */ = {isa = PBXBuildFile; fileRef = AC0CF8FE298F858A00ADE21A /* falafel.scn */; };
+>>>>>>> Stashed changes
 		AC1DB79D298EF90A000B670F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1DB79C298EF90A000B670F /* AppDelegate.swift */; };
 		AC1DB79F298EF90A000B670F /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1DB79E298EF90A000B670F /* MenuVC.swift */; };
 		AC1DB7A1298EF90A000B670F /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = AC1DB7A0298EF90A000B670F /* Experience.rcproject */; };
@@ -262,8 +267,13 @@
 		4729AAB8298F7838003C52E0 /* ThresholdPanGesture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThresholdPanGesture.swift; sourceTree = "<group>"; };
 		4729AAB9298F7838003C52E0 /* ViewController+Actions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+Actions.swift"; sourceTree = "<group>"; };
 		4729AAC1298F7875003C52E0 /* MenuVC+AR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MenuVC+AR.swift"; sourceTree = "<group>"; };
+<<<<<<< Updated upstream
 		4729AAC3298F7D0A003C52E0 /* CartService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartService.swift; sourceTree = "<group>"; };
 		4729AAC5298F7D0F003C52E0 /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
+=======
+		AC0CF8FC298F854700ADE21A /* falafel.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = falafel.usdz; path = ../../../../Downloads/falafel.usdz; sourceTree = "<group>"; };
+		AC0CF8FE298F858A00ADE21A /* falafel.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; name = falafel.scn; path = ../../../../Downloads/falafel.scn; sourceTree = "<group>"; };
+>>>>>>> Stashed changes
 		AC1DB799298EF90A000B670F /* NewWorldOrder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewWorldOrder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC1DB79C298EF90A000B670F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC1DB79E298EF90A000B670F /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
@@ -623,6 +633,8 @@
 			children = (
 				4729AA9E298F77F4003C52E0 /* Models.scnassets */,
 				4729A9AA298EFE90003C52E0 /* pie.usdz */,
+				AC0CF8FC298F854700ADE21A /* falafel.usdz */,
+				AC0CF8FE298F858A00ADE21A /* falafel.scn */,
 				4729A9AB298EFE90003C52E0 /* pot.usdz */,
 				AC1DB7A0298EF90A000B670F /* Experience.rcproject */,
 				AC1DB7A5298EF90C000B670F /* Assets.xcassets */,
@@ -794,8 +806,10 @@
 				4729AA8E298F2AD1003C52E0 /* MenuItemTableCell.xib in Resources */,
 				AC1DB7A9298EF90C000B670F /* LaunchScreen.storyboard in Resources */,
 				AC1DB7A6298EF90C000B670F /* Assets.xcassets in Resources */,
+				AC0CF8FD298F854700ADE21A /* falafel.usdz in Resources */,
 				4729A9AC298EFE90003C52E0 /* pie.usdz in Resources */,
 				AC1DB7A4298EF90A000B670F /* Main.storyboard in Resources */,
+				AC0CF8FF298F858A00ADE21A /* falafel.scn in Resources */,
 				4729A9AD298EFE90003C52E0 /* pot.usdz in Resources */,
 				4729AA9F298F77F4003C52E0 /* Models.scnassets in Resources */,
 			);
@@ -1075,7 +1089,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5JEM6D7V78;
+				DEVELOPMENT_TEAM = BK6S5YLHV4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NewWorldOrder/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = NewWorldOrder;
@@ -1113,7 +1127,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5JEM6D7V78;
+				DEVELOPMENT_TEAM = BK6S5YLHV4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NewWorldOrder/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = NewWorldOrder;
