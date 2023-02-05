@@ -110,6 +110,8 @@
 		4729AA90298F2DBF003C52E0 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4729AA8F298F2DBF003C52E0 /* MenuItem.swift */; };
 		4729AA92298F3243003C52E0 /* CustomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4729AA91298F3243003C52E0 /* CustomSheetViewController.swift */; };
 		4729AA94298F3257003C52E0 /* ItemSheetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4729AA93298F3257003C52E0 /* ItemSheetVC.swift */; };
+		4729AA99298F479E003C52E0 /* CheckoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4729AA98298F479E003C52E0 /* CheckoutVC.swift */; };
+		4729AA9B298F488A003C52E0 /* MoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4729AA9A298F488A003C52E0 /* MoreVC.swift */; };
 		AC1DB79D298EF90A000B670F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1DB79C298EF90A000B670F /* AppDelegate.swift */; };
 		AC1DB79F298EF90A000B670F /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1DB79E298EF90A000B670F /* MenuVC.swift */; };
 		AC1DB7A1298EF90A000B670F /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = AC1DB7A0298EF90A000B670F /* Experience.rcproject */; };
@@ -223,6 +225,8 @@
 		4729AA93298F3257003C52E0 /* ItemSheetVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemSheetVC.swift; sourceTree = "<group>"; };
 		4729AA96298F32A1003C52E0 /* mist-ios-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "mist-ios-Bridging-Header.h"; sourceTree = "<group>"; };
 		4729AA97298F32A1003C52E0 /* UISheetPresentationControllerDetent+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISheetPresentationControllerDetent+Private.h"; sourceTree = "<group>"; };
+		4729AA98298F479E003C52E0 /* CheckoutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutVC.swift; sourceTree = "<group>"; };
+		4729AA9A298F488A003C52E0 /* MoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreVC.swift; sourceTree = "<group>"; };
 		AC1DB799298EF90A000B670F /* NewWorldOrder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewWorldOrder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC1DB79C298EF90A000B670F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC1DB79E298EF90A000B670F /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
@@ -268,7 +272,9 @@
 				AC1DB79C298EF90A000B670F /* AppDelegate.swift */,
 				4729AA85298F29C2003C52E0 /* SceneDelegate.swift */,
 				AC1DB79E298EF90A000B670F /* MenuVC.swift */,
+				4729AA9A298F488A003C52E0 /* MoreVC.swift */,
 				4729AA93298F3257003C52E0 /* ItemSheetVC.swift */,
+				4729AA98298F479E003C52E0 /* CheckoutVC.swift */,
 				4729A9B7298F28F0003C52E0 /* Misc */,
 			);
 			path = Controller;
@@ -716,6 +722,7 @@
 				AC1DB79D298EF90A000B670F /* AppDelegate.swift in Sources */,
 				4729AA41298F28FF003C52E0 /* UIImage+Thumbnail.swift in Sources */,
 				4729AA59298F28FF003C52E0 /* UITextView+Newline.swift in Sources */,
+				4729AA9B298F488A003C52E0 /* MoreVC.swift in Sources */,
 				4729AA64298F28FF003C52E0 /* UIViewController+DismissFlag.swift in Sources */,
 				4729AA58298F28FF003C52E0 /* UIAlertController+AddImage.swift in Sources */,
 				4729AA37298F28FF003C52E0 /* String+Pattern.swift in Sources */,
@@ -747,6 +754,7 @@
 				4729AA43298F28FF003C52E0 /* UIScrollView+IsAt.swift in Sources */,
 				4729A9B6298F28E0003C52E0 /* Device.swift in Sources */,
 				4729AA5C298F28FF003C52E0 /* UITextView+PreventPeriod.swift in Sources */,
+				4729AA99298F479E003C52E0 /* CheckoutVC.swift in Sources */,
 				4729AA76298F28FF003C52E0 /* UIColor+Custom.swift in Sources */,
 				4729AA48298F28FF003C52E0 /* UIView+BecomeRound.swift in Sources */,
 				4729A9BA298F28F0003C52E0 /* UpdateAvailableVC.swift in Sources */,

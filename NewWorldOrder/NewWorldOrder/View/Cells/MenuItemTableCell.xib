@@ -19,10 +19,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PrI-Ds-oQA">
-                        <rect key="frame" x="10" y="5" width="375" height="115"/>
+                        <rect key="frame" x="15" y="5" width="365" height="115"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4HM-56-oR1">
-                                <rect key="frame" x="10" y="10" width="355" height="95"/>
+                                <rect key="frame" x="10" y="10" width="345" height="95"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="matcha" translatesAutoresizingMaskIntoConstraints="NO" id="L3w-6c-KkG">
                                         <rect key="frame" x="0.0" y="0.0" width="95" height="95"/>
@@ -31,17 +31,17 @@
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="LIf-e9-mBw">
-                                        <rect key="frame" x="105" y="21.666666666666664" width="250" height="51.999999999999993"/>
+                                        <rect key="frame" x="105" y="17.333333333333332" width="240" height="60.333333333333343"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dulce Matcha" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ilr-1X-Fjw">
-                                                <rect key="frame" x="0.0" y="0.0" width="128.66666666666666" height="24"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="153.33333333333334" height="28.666666666666668"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                                 <color key="textColor" name="customWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$6.25" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Yev-92-PYj">
-                                                <rect key="frame" x="0.0" y="34.000000000000007" width="40" height="18"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <rect key="frame" x="0.0" y="38.666666666666664" width="47" height="21.666666666666664"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <color key="textColor" name="customWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -64,8 +64,8 @@
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="PrI-Ds-oQA" secondAttribute="bottom" constant="5" id="Iwu-tx-Gqc"/>
                     <constraint firstItem="PrI-Ds-oQA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="SsE-38-NuR"/>
-                    <constraint firstAttribute="trailing" secondItem="PrI-Ds-oQA" secondAttribute="trailing" constant="10" id="Ydg-qT-Kkb"/>
-                    <constraint firstItem="PrI-Ds-oQA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="hNI-Bt-qTV"/>
+                    <constraint firstAttribute="trailing" secondItem="PrI-Ds-oQA" secondAttribute="trailing" constant="15" id="Ydg-qT-Kkb"/>
+                    <constraint firstItem="PrI-Ds-oQA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="hNI-Bt-qTV"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

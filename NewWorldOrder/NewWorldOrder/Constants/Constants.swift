@@ -39,10 +39,13 @@ enum Constants {
         }
         struct Cell {
             static let MenuItemTableCell = "MenuItemTableCell"
+            static let SettingsCell = "SettingsCell"
         }
         struct VC {
             //Home
             static let MenuVC = "MenuVC"
+            static let CheckoutVC = "CheckoutVC"
+            static let MoreVC = "MoreVC"
             static let ItemSheetVC = "ItemSheetVC"
         }
         struct Segue {

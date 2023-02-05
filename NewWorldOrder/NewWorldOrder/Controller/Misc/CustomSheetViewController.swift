@@ -79,8 +79,12 @@ class CustomSheetViewController: UIViewController, UIViewControllerTransitioning
         print("will transition to")
     }
 
-    func toggleSheetSizeTo(sheetSize: String) {
-        mySheetPresentationController.animateChanges {
+    func toggleSheetSizeTo(sheetSize: String, animated: Bool) {
+        if animated {
+            mySheetPresentationController.animateChanges {
+                mySheetPresentationController.selectedDetentIdentifier = .init(rawValue: sheetSize)
+            }
+        } else {
             mySheetPresentationController.selectedDetentIdentifier = .init(rawValue: sheetSize)
         }
     }

@@ -18,17 +18,21 @@ class ItemSheetVC: CustomSheetViewController {
     //MARK: - Properties
     
     var completionHandler: PinMapModalCompletionHandler!
-
-//    @IBOutlet weak var selectButton: UIButton!
-//    @IBOutlet weak var reselectButton: UIButton!
-
     var menuItem: MenuItem!
+
+    //UI
+    @IBOutlet weak var cartButton: UIButton!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+
     
     //MARK: - Initialization
     
-    class func create(item: MenuItem, sheetDelegate: UISheetPresentationControllerDelegate) -> ItemSheetVC {
+    class func create(item: MenuItem, sheetDelegate: UISheetPresentationControllerDelegate, dismissDelegate: childDismissDelegate) -> ItemSheetVC {
         let vc = UIStoryboard(name: Constants.SBID.SB.Main, bundle: nil).instantiateViewController(withIdentifier: Constants.SBID.VC.ItemSheetVC) as! ItemSheetVC
         vc.menuItem = item
+        vc.sheetDismissDelegate = dismissDelegate
         vc.sheetDelegate = sheetDelegate
         vc.loadViewIfNeeded() //doesnt work without this function call
         return vc
@@ -38,6 +42,7 @@ class ItemSheetVC: CustomSheetViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        rerender(with: menuItem)
 //        selectButton.layer.cornerRadius = 5
 //        reselectButton.layer.cornerRadius = 5
         containingView.layer.cornerRadius = 15
@@ -51,7 +56,7 @@ class ItemSheetVC: CustomSheetViewController {
         setupSheet(prefersGrabberVisible: true,
                    detents: [Constants.Detents.zil, Constants.Detents.s, Constants.Detents.l],
                    largestUndimmedDetentIdentifier: "xl")
-        toggleSheetSizeTo(sheetSize: "s")
+        toggleSheetSizeTo(sheetSize: "s", animated: false)
     }
 
     //MARK: - User Interaction
@@ -63,14 +68,24 @@ class ItemSheetVC: CustomSheetViewController {
     @IBAction func reselectButtonDidPressed(_ sender: UIButton) {
         
     }
+    
+    //MARK: - Public Interface
+    
+    func rerender(with menuItem: MenuItem) {
+        self.menuItem = menuItem
+        titleLabel.text = menuItem.title
+        priceLabel.text = "$\(menuItem.price)"
+        descriptionLabel.text = "GOOD SHIT"
+    }
 
 
     //MARK: - Helpers
 
     @objc func handleBackgroundTap() {
-        if mySheetPresentationController.selectedDetentIdentifier?.rawValue == "xs" {
-            toggleSheetSizeTo(sheetSize: "s")
-        }
+        //not also hiding the side buttons rn. the programmatic call below doesnt perform the "sheetSizeDidAdjust" delegate call like the user slide
+//        if mySheetPresentationController.selectedDetentIdentifier?.rawValue == "s" {
+//            toggleSheetSizeTo(sheetSize: "l", animated: true)
+//        }
     }
 
 }

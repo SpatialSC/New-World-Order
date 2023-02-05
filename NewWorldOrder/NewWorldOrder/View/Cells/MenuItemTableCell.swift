@@ -17,7 +17,7 @@ class MenuItemTableCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
-        bgView.backgroundColor = .customBlack.withAlphaComponent(0.65)
+        bgView.backgroundColor = .customBlack.withAlphaComponent(0.8)
         bgView.roundCornersViaCornerRadius(radius: 15)
     }
     
