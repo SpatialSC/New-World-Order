@@ -9,7 +9,7 @@ import UIKit
 import ARKit
 import SceneKit
 
-extension MenuVC: VirtualObjectSelectionViewControllerDelegate {
+extension MenuVC {
     
     /** Adds the specified virtual object to the scene, placed at the world-space position
      estimated by a hit test from the center of the screen.
@@ -17,9 +17,9 @@ extension MenuVC: VirtualObjectSelectionViewControllerDelegate {
     func placeVirtualObject(_ virtualObject: VirtualObject) {
         guard focusSquare.state != .initializing, let query = virtualObject.raycastQuery else {
             AlertManager.displayError("Cannot place object", "Try moving left or right")
-            if let controller = self.objectsViewController {
-                self.virtualObjectSelectionViewController(controller, didDeselectObject: virtualObject)
-            }
+//            if let controller = self.objectsViewController {
+//                self.virtualObjectSelectionViewController(controller, didDeselectObject: virtualObject)
+//            }
             return
         }
        
@@ -77,12 +77,13 @@ extension MenuVC: VirtualObjectSelectionViewControllerDelegate {
             virtualObject.shouldUpdateAnchor = true
         }
         
-        if virtualObject.shouldUpdateAnchor {
-            virtualObject.shouldUpdateAnchor = false
-            self.updateQueue.async {
-                self.sceneView.addOrUpdateAnchor(for: virtualObject)
-            }
-        }
+        //TODO: this should not be commented out
+//        if virtualObject.shouldUpdateAnchor {
+//            virtualObject.shouldUpdateAnchor = false
+//            self.updateQueue.async {
+//                self.sceneView.addOrUpdateAnchor(for: virtualObject)
+//            }
+//        }
     }
     
     func setTransform(of virtualObject: VirtualObject, with result: ARRaycastResult) {
