@@ -334,8 +334,8 @@ extension MenuVC: UITableViewDelegate {
         presentItemSheetVC(currentlyVisibleItem!)
         toggleFullBackgroundShadow(hidden: true)
         
-//        let object = VirtualObject.availableObjects.first(where: { $0.modelName == "cup" })!
-        let object = VirtualObject.availableObjects[Int.random(in: 0..<5)]
+        let object = VirtualObject.availableObjects.first(where: { $0.modelName == "falafel" })!
+//        let object = VirtualObject.availableObjects[Int.random(in: 0..<5)]
         
         virtualObjectLoader.removeVirtualObject(at: CartService.shared.getCartQuantity())
         loadObject(object: object)
