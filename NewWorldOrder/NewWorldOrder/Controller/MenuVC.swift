@@ -36,8 +36,9 @@ class MenuVC: UIViewController {
 //    }()
     
     /// The view controller that displays the virtual object selection menu.
-    var objectsViewController: VirtualObjectSelectionViewController?
-    
+//    var objectsViewController: VirtualObjectSelectionViewController?
+    var lastObjectAvailabilityUpdateTimestamp: TimeInterval?
+
     // MARK: - ARKit Configuration Properties
     
     /// A type which manages gesture manipulation of virtual content in the scene.
@@ -305,6 +306,25 @@ extension MenuVC: UITableViewDelegate {
         currentlyVisibleItem = AllMenuItems[indexPath.section].1[indexPath.row]
         presentItemSheetVC(currentlyVisibleItem!)
         toggleFullBackgroundShadow(hidden: true)
+        
+        let object = VirtualObject.availableObjects.first(where: { $0.modelName == "cup" })!
+        virtualObjectLoader.loadVirtualObject(object, loadedHandler: { [unowned self] loadedObject in
+            
+            do {
+                let scene = try SCNScene(url: object.referenceURL, options: nil)
+                self.sceneView.prepare([scene], completionHandler: { _ in
+                    DispatchQueue.main.async {
+                        self.hideObjectLoadingUI()
+                        self.placeVirtualObject(loadedObject)
+                    }
+                })
+            } catch {
+                fatalError("Failed to load SCNScene from object.referenceURL")
+            }
+            
+        })
+        displayObjectLoadingUI()
+        
         return nil
     }
     

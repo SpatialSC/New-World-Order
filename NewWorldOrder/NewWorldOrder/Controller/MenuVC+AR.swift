@@ -55,7 +55,7 @@ extension MenuVC {
                 self.sceneView.pointOfView?.addChildNode(self.focusSquare)
             }
 //            addObjectButton.isHidden = true
-            objectsViewController?.dismiss(animated: false, completion: nil)
+//            objectsViewController?.dismiss(animated: false, completion: nil)
         }
     }
     

@@ -21,9 +21,10 @@ extension MenuVC: ARSCNViewDelegate, ARSessionDelegate {
             self.updateFocusSquare(isObjectVisible: isAnyObjectInView)
             
             // If the object selection menu is open, update availability of items
-            if self.objectsViewController?.viewIfLoaded?.window != nil {
-                self.objectsViewController?.updateObjectAvailability()
-            }
+//            if self.objectsViewController?.viewIfLoaded?.window != nil {
+//                self.objectsViewController?.updateObjectAvailability()
+//            }
+            self.updateObjectAvailability()
         }
     }
     
